@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='produtos.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">Produtos</h1>
+        <!-- Barra de busca -->
+        <form action="/buscar_produtos" method="GET" class="search-form">
+            <input type="text" class="search-input" placeholder="Buscar por Nome do Produto" name="nome">
+            <button class="search-button" type="submit">Buscar</button>
+        </form>
+        <!-- Adicionar link para criar um novo produto -->
+        <a href="/criar" class="btn btn-primary">Criar Novo Produto</a>
+        
+        <!-- Botão de logout -->
+        <form action="/logout" method="GET" style="display: inline;">
+            <button class="btn btn-danger" type="submit">Logout</button>
+        </form>
+
+        <!-- Lista de produtos -->
+        <ul class="product-list">
+            {% for produto in produtos %}
+            <li class="product-item">
+                <div class="product-info">
+                    <span>ID: {{ produto.id }}</span><br>
+                    <span>Nome: {{ produto.nome }}</span><br>
+                    <span>Preço: {{ produto.preco }}</span>
+                </div>
+                <div class="product-description">
+                    Descrição: {{ produto.descricao }}
+                </div>
+                <!-- Formulário para exclusão do produto -->
+                <form action="/produtos/{{ produto.id }}" method="POST" style="display: inline;" onsubmit="return confirmarExclusao()">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn btn-danger">Excluir</button>
+                </form>
+                
+                <!-- Link para edição do produto -->
+                <a href="/editar_produto/{{ produto.id }}" class="btn btn-secondary">Editar</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <script>
+        function confirmarExclusao() {
+            return confirm("Tem certeza que deseja excluir este produto?");
+        }
+    </script>
+</body>
+
+</html>
