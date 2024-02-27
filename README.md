@@ -62,6 +62,12 @@ CRUD_COMPLETO_FLASK_PY/
 
 2. **Instalar Dependências**:
    - Instale as dependências do projeto listadas no arquivo `requirements.txt` usando o comando `pip install -r requirements.txt`.
+   - Se você encontrar problemas durante a instalação das dependências usando o comando `pip install`, você pode tentar executar o comando em um terminal aberto como administrador (no Windows) ou com permissões elevadas (no Linux/macOS). Abra o terminal como administrador e execute o seguinte comando:
+
+      ```
+      pip install flask flask-SQLAlchemy mysql-connector-python mysqlclient requests
+      ```
+
 
 3. **Executar a Aplicação**:
    - Execute o arquivo `app.py` para iniciar a aplicação Flask.
