@@ -43,7 +43,6 @@
     border-radius: 5px;
 }
 
-/* Estilo para botões de ação */
 .btn {
     display: inline-block;
     padding: 8px 16px;
@@ -60,7 +59,7 @@
     color: #fff;
     border: 1px solid #007bff;
 }
-/* Estilo para o botão "Editar" */
+
 .btn-secondary {
     background-color: #007bff;
     color: #fff;
@@ -72,7 +71,6 @@
     border-color: #0056b3;
 }
 
-/* Estilo para o botão "Excluir" */
 .btn-danger {
     background-color: #dc3545;
     color: #fff;

@@ -1,6 +1,5 @@
-Flask
-Flask-SQLAlchemy
 mysql-connector-python
 mysqlclient
-Werkzeug
 requests
+Flask
+Flask-SQLAlchemy
